@@ -31,9 +31,7 @@ export default function GameDashboard() {
 
   const handleViewGreeting = () => {
     celebrationConfetti();
-    // TODO: Navigate to greeting card
-    console.log('View greeting card');
-    // router.push('/greeting');
+    router.push('/greeting');
   };
 
   return (
