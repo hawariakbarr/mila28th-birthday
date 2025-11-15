@@ -1,13 +1,14 @@
 import RiddleDisplay from '@/components/features/RiddleDisplay';
 
 interface RiddlePageProps {
-  params: {
+  params: Promise<{
     level: string;
-  };
+  }>;
 }
 
-export default function RiddlePage({ params }: RiddlePageProps) {
-  const level = parseInt(params.level, 10);
+export default async function RiddlePage({ params }: RiddlePageProps) {
+  const { level: levelParam } = await params;
+  const level = parseInt(levelParam, 10);
 
   return <RiddleDisplay level={level} />;
 }
