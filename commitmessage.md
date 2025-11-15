@@ -1,7 +1,4 @@
-﻿# idc.pefindo.pbk
-
-Dotnet version 8
-
+﻿
 # Git Commit Message Guidelines
 
 ## Commit Message Structure

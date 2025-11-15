@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Gift, Sparkles, Heart } from 'lucide-react';
 import { celebrationConfetti } from '@/lib/utils';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function LandingPage() {
+  const router = useRouter();
+
   useEffect(() => {
     // Trigger confetti on page load
     const timer = setTimeout(() => {
@@ -17,8 +20,7 @@ export default function LandingPage() {
 
   const handleStart = () => {
     celebrationConfetti();
-    // TODO: Navigate to dashboard
-    console.log('Starting adventure...');
+    router.push('/dashboard');
   };
 
   return (
