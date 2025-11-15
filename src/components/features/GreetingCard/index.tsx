@@ -15,8 +15,11 @@ export default function GreetingCard() {
   const { progress } = useGameProgress();
   const [isCardOpen, setIsCardOpen] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+
     // Trigger initial celebration
     celebrationConfetti();
 
@@ -49,30 +52,32 @@ export default function GreetingCard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 p-4 overflow-hidden relative">
       {/* Floating celebration elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-4xl"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: -50,
-              rotate: 0,
-            }}
-            animate={{
-              y: window.innerHeight + 50,
-              rotate: 360,
-            }}
-            transition={{
-              duration: Math.random() * 3 + 5,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          >
-            {['🎈', '🎉', '✨', '🎊', '💝'][Math.floor(Math.random() * 5)]}
-          </motion.div>
-        ))}
-      </div>
+      {mounted && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-4xl"
+              initial={{
+                x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+                y: -50,
+                rotate: 0,
+              }}
+              animate={{
+                y: (typeof window !== 'undefined' ? window.innerHeight : 800) + 50,
+                rotate: 360,
+              }}
+              transition={{
+                duration: Math.random() * 3 + 5,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+              }}
+            >
+              {['🎈', '🎉', '✨', '🎊', '💝'][Math.floor(Math.random() * 5)]}
+            </motion.div>
+          ))}
+        </div>
+      )}
 
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
