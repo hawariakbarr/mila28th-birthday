@@ -104,13 +104,13 @@ export default function LevelCard({ level, isUnlocked, isCompleted, onPlay }: Le
             disabled={!isUnlocked}
             className={cn(
               'w-full',
-              isCompleted
+              mounted && isCompleted
                 ? 'bg-green-600 hover:bg-green-700'
                 : 'bg-gradient-to-r from-birthday-deepBlue to-birthday-skyBlue hover:from-birthday-skyBlue hover:to-birthday-deepBlue'
             )}
             size="lg"
           >
-            {isCompleted ? (
+            {mounted && isCompleted ? (
               <>
                 <Check className="mr-2" size={20} />
                 Play Again
@@ -136,7 +136,7 @@ export default function LevelCard({ level, isUnlocked, isCompleted, onPlay }: Le
                 className={cn(
                   'h-1.5 flex-1 rounded-full transition-all',
                   i <= level.id
-                    ? isCompleted
+                    ? mounted && isCompleted
                       ? 'bg-green-500'
                       : isUnlocked
                       ? 'bg-birthday-skyBlue'
