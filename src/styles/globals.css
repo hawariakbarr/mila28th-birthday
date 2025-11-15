@@ -53,10 +53,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -67,15 +68,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-birthday-lavender;
+  background-color: #ede8f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-birthday-skyBlue rounded-lg;
+  background-color: #7091e6;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-birthday-deepBlue;
+  background-color: #3d52a0;
 }
 
 /* Smooth scroll */

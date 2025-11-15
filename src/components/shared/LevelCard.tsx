@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,6 +30,12 @@ const gameIcons: Record<string, string> = {
 };
 
 export default function LevelCard({ level, isUnlocked, isCompleted, onPlay }: LevelCardProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -39,7 +46,7 @@ export default function LevelCard({ level, isUnlocked, isCompleted, onPlay }: Le
       <Card
         className={cn(
           'relative overflow-hidden transition-all duration-300',
-          isCompleted
+          mounted && isCompleted
             ? 'bg-gradient-to-br from-green-50 to-green-100 border-green-400'
             : isUnlocked
             ? 'bg-gradient-to-br from-birthday-lavender to-white border-birthday-skyBlue hover:shadow-xl'
@@ -47,7 +54,7 @@ export default function LevelCard({ level, isUnlocked, isCompleted, onPlay }: Le
         )}
       >
         {/* Completed Badge */}
-        {isCompleted && (
+        {mounted && isCompleted && (
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
