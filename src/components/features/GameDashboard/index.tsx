@@ -22,9 +22,7 @@ export default function GameDashboard() {
   } = useGameProgress();
 
   const handlePlayGame = (levelId: number) => {
-    // TODO: Navigate to the specific game
-    console.log('Play game level:', levelId);
-    // router.push(`/game/${levelId}`);
+    router.push(`/game/${levelId}`);
   };
 
   const handleBackToHome = () => {
