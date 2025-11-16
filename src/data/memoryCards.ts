@@ -1,6 +1,6 @@
 // Birthday-themed emojis for memory match game
 export const cardImages = [
-  '🎂', // Birthday cake
+  '🍬', // Candy
   '🎁', // Gift
   '🎈', // Balloon
   '🎉', // Party popper

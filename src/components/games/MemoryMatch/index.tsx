@@ -73,7 +73,7 @@ export default function MemoryMatch() {
           );
           setFlippedCards([]);
           setCanFlip(true);
-        }, 1200);
+        }, 500);
       }
       setMoves((prev) => prev + 1);
     }
