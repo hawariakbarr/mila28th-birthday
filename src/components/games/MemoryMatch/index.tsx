@@ -129,14 +129,23 @@ export default function MemoryMatch() {
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="mb-6">
-          <Button
-            variant="ghost"
-            onClick={handleBackToDashboard}
-            className="mb-4"
-          >
-            <ArrowLeft className="mr-2" size={20} />
-            Back to Dashboard
-          </Button>
+          <div className="flex items-center justify-between mb-4">
+            <Button
+              variant="ghost"
+              onClick={handleBackToDashboard}
+            >
+              <ArrowLeft className="mr-2" size={20} />
+              Back to Dashboard
+            </Button>
+            <Button
+              variant="outline"
+              onClick={resetGame}
+              className="border-birthday-skyBlue text-birthday-deepBlue hover:bg-birthday-lightBlue"
+            >
+              <RotateCcw className="mr-2" size={18} />
+              Restart Game
+            </Button>
+          </div>
 
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="flex items-center justify-between flex-wrap gap-4">

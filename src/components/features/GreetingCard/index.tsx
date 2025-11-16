@@ -95,13 +95,14 @@ export default function GreetingCard() {
         {/* Main Card */}
         <div className="perspective-1000 min-h-[600px] flex items-center justify-center">
           <motion.div
-            className="relative w-full max-w-4xl preserve-3d"
+            className="relative w-full max-w-4xl h-[600px] preserve-3d"
             animate={{ rotateY: isCardOpen ? 180 : 0 }}
             transition={{ duration: 1.2, type: 'spring' }}
+            style={{ transformStyle: 'preserve-3d' }}
           >
             {/* Card Front */}
             <motion.div
-              className="absolute inset-0 backface-hidden"
+              className="absolute inset-0 w-full h-full backface-hidden"
               style={{ backfaceVisibility: 'hidden' }}
             >
               <Card className="bg-gradient-to-br from-birthday-deepBlue to-birthday-skyBlue text-white shadow-2xl h-[600px] flex items-center justify-center cursor-pointer"
@@ -154,7 +155,7 @@ export default function GreetingCard() {
 
             {/* Card Back (Inside) */}
             <motion.div
-              className="absolute inset-0 backface-hidden rotate-y-180"
+              className="absolute inset-0 w-full h-full backface-hidden"
               style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
             >
               <Card className="bg-white shadow-2xl h-[600px] overflow-y-auto">
