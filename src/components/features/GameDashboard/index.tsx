@@ -1,8 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Sparkles } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowLeft, Sparkles, RotateCcw, AlertTriangle } from 'lucide-react';
 import ProgressBar from '@/components/shared/ProgressBar';
 import LevelCard from '@/components/shared/LevelCard';
 import GiftCard from '@/components/shared/GiftCard';
@@ -19,7 +21,9 @@ export default function GameDashboard() {
     isLevelUnlocked,
     isLevelCompleted,
     isGiftCollected,
+    resetProgress,
   } = useGameProgress();
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   const handlePlayGame = (levelId: number) => {
     router.push(`/game/${levelId}`);
@@ -32,6 +36,12 @@ export default function GameDashboard() {
   const handleViewGreeting = () => {
     celebrationConfetti();
     router.push('/greeting');
+  };
+
+  const handleResetConfirm = () => {
+    resetProgress();
+    setShowResetConfirm(false);
+    router.refresh();
   };
 
   return (
@@ -57,7 +67,15 @@ export default function GameDashboard() {
               Birthday Adventure 🎂
             </motion.h1>
 
-            <div className="w-24" /> {/* Spacer for centering */}
+            <Button
+              variant="ghost"
+              onClick={() => setShowResetConfirm(true)}
+              className="text-white hover:bg-white/20"
+              size="sm"
+            >
+              <RotateCcw size={16} className="mr-1" />
+              Reset
+            </Button>
           </div>
 
           <motion.p
@@ -161,6 +179,68 @@ export default function GameDashboard() {
           <p>💡 Tip: Complete each game to unlock a riddle and find your gift!</p>
         </motion.div>
       </div>
+
+      {/* Reset Confirmation Modal */}
+      <AnimatePresence>
+        {showResetConfirm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+            onClick={() => setShowResetConfirm(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-md w-full"
+            >
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-yellow-100 rounded-full p-3">
+                      <AlertTriangle className="text-yellow-600" size={24} />
+                    </div>
+                    <CardTitle className="text-xl">Reset Progress?</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-600">
+                    Are you sure you want to reset all progress? This will:
+                  </p>
+                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>Clear all completed levels</li>
+                    <li>Remove all collected gifts</li>
+                    <li>Reset the game to the beginning</li>
+                  </ul>
+                  <p className="text-sm font-semibold text-red-600">
+                    This action cannot be undone!
+                  </p>
+
+                  <div className="flex gap-3 pt-2">
+                    <Button
+                      variant="outline"
+                      onClick={() => setShowResetConfirm(false)}
+                      className="flex-1"
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      onClick={handleResetConfirm}
+                      className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+                    >
+                      <RotateCcw className="mr-2" size={16} />
+                      Reset Progress
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
