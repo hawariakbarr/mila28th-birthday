@@ -31,35 +31,33 @@ export default function GiftCard({ name, image, isCollected, level }: GiftCardPr
         <CardContent className="p-4">
           {/* Gift Icon or Image */}
           <div className="flex items-center justify-center h-24 mb-3 relative">
-            {image ? (
-              <img
-                src={image}
-                alt={name}
-                className={cn(
-                  'h-20 w-20 object-contain',
-                  !isCollected && 'opacity-40'
+            {isCollected ? (
+              // Show actual gift when collected
+              <>
+                {image ? (
+                  <img
+                    src={image}
+                    alt={name}
+                    className="h-20 w-20 object-contain"
+                  />
+                ) : (
+                  <Gift size={60} className="text-birthday-deepBlue" />
                 )}
-              />
+                {/* Collected Badge */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: 'spring' }}
+                  className="absolute top-0 right-0 bg-green-500 rounded-full p-1.5"
+                >
+                  <Check size={16} className="text-white" />
+                </motion.div>
+              </>
             ) : (
-              <Gift
-                size={60}
-                className={cn(
-                  'text-birthday-deepBlue',
-                  !isCollected && 'opacity-40'
-                )}
-              />
-            )}
-
-            {/* Collected Badge */}
-            {isCollected && (
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, type: 'spring' }}
-                className="absolute top-0 right-0 bg-green-500 rounded-full p-1.5"
-              >
-                <Check size={16} className="text-white" />
-              </motion.div>
+              // Show mystery/locked state when not collected
+              <div className="text-6xl">
+                🎁
+              </div>
             )}
           </div>
 
@@ -71,7 +69,7 @@ export default function GiftCard({ name, image, isCollected, level }: GiftCardPr
                 isCollected ? 'text-primary' : 'text-gray-500'
               )}
             >
-              {name}
+              {isCollected ? name : '???'}
             </h3>
             <p className="text-xs text-gray-500 mt-1">Level {level}</p>
           </div>

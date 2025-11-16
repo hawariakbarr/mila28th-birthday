@@ -256,7 +256,7 @@ export default function RiddleDisplay({ level }: RiddleDisplayProps) {
 
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                     <p className="text-sm text-blue-800">
-                      💡 Go find your <span className="font-bold">{gift.name}</span> and come back to mark it as collected!
+                      💡 Go find your <span className="font-bold"> Gift </span> and come back to mark it as collected!
                     </p>
                   </div>
 

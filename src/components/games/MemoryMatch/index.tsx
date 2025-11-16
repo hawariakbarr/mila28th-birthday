@@ -60,7 +60,7 @@ export default function MemoryMatch() {
           setFlippedCards([]);
           setCanFlip(true);
           giftCollectedConfetti();
-        }, 600);
+        }, 300);
       } else {
         // No match
         setTimeout(() => {
