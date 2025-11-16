@@ -45,3 +45,6 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# MegaLLM Configuration
+.claude/settings.local.json

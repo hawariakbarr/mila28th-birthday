@@ -1,8 +1,4 @@
 {
-  "env": {
-    "ANTHROPIC_BASE_URL": "https://ai.megallm.io",
-    "ANTHROPIC_API_KEY": "sk-mega-0f9ffcb68f90126499733c77baeed6015b96cb587e8c5ff05ae7e94eca74b349"
-  },
   "permissions": {
     "allow": [
       "Bash(npx create-next-app:*)",
@@ -17,8 +13,7 @@
       "Bash(npm uninstall:*)",
       "WebSearch",
       "WebFetch(domain:www.puzzlesandriddles.com)",
-      "WebFetch(domain:2019.makemepulse.com)",
-      "Bash(dir:*)"
+      "WebFetch(domain:2019.makemepulse.com)"
     ],
     "deny": [],
     "ask": []
