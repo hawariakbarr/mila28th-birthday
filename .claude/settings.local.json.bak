@@ -13,7 +13,8 @@
       "Bash(npm uninstall:*)",
       "WebSearch",
       "WebFetch(domain:www.puzzlesandriddles.com)",
-      "WebFetch(domain:2019.makemepulse.com)"
+      "WebFetch(domain:2019.makemepulse.com)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

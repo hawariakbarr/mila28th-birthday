@@ -1,13 +1,16 @@
 import { Level } from '@/types';
 
+/**
+ * Level configuration data
+ * Note: isUnlocked and isCompleted are derived from game progress store
+ * They should NOT be stored here
+ */
 export const levels: Level[] = [
   {
     id: 1,
     gameType: 'memory',
     title: 'Memory Match',
     description: 'Match pairs of birthday-themed cards to unlock your first clue!',
-    isUnlocked: true,
-    isCompleted: false,
     difficulty: 'easy',
     giftId: 'sleeping-dress',
   },
@@ -16,8 +19,6 @@ export const levels: Level[] = [
     gameType: 'spot-difference',
     title: 'Spot the Difference',
     description: 'Find all the differences between two birthday celebration images.',
-    isUnlocked: false,
-    isCompleted: false,
     difficulty: 'easy',
     giftId: 'prayer-robe',
   },
@@ -26,8 +27,6 @@ export const levels: Level[] = [
     gameType: 'hidden-objects',
     title: 'Hidden Objects',
     description: 'Find all the hidden birthday items in the scene.',
-    isUnlocked: false,
-    isCompleted: false,
     difficulty: 'medium',
     giftId: 'parfume',
   },
@@ -36,8 +35,6 @@ export const levels: Level[] = [
     gameType: 'word-search',
     title: 'Word Search',
     description: 'Find all the birthday-related words hidden in the grid.',
-    isUnlocked: false,
-    isCompleted: false,
     difficulty: 'medium',
     giftId: 'shoes',
   },
@@ -46,8 +43,6 @@ export const levels: Level[] = [
     gameType: 'puzzle',
     title: 'Puzzle Challenge',
     description: 'Complete the birthday puzzle to find your final gift!',
-    isUnlocked: false,
-    isCompleted: false,
     difficulty: 'hard',
     giftId: 'bag',
   },

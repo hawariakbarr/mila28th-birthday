@@ -1,21 +1,27 @@
+/**
+ * Gift data structure
+ * Note: isCollected is derived from GameProgress.collectedGifts
+ */
 export interface Gift {
   id: string;
   name: string;
   level: number;
   image: string;
-  isCollected: boolean;
   riddleClue: string;
   answer: string;
   houseLocation: string;
 }
 
+/**
+ * Level data structure
+ * Note: isUnlocked and isCompleted are derived from GameProgress
+ * Use useGameStore.isLevelUnlocked() and isLevelCompleted() to get these values
+ */
 export interface Level {
   id: number;
   gameType: 'memory' | 'spot-difference' | 'hidden-objects' | 'word-search' | 'puzzle';
   title: string;
   description: string;
-  isUnlocked: boolean;
-  isCompleted: boolean;
   difficulty: 'easy' | 'medium' | 'hard';
   giftId: string;
 }

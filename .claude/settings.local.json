@@ -1,24 +1,25 @@
 {
-  "env": {
-    "ANTHROPIC_BASE_URL": "https://ai.megallm.io",
-    "ANTHROPIC_API_KEY": "sk-mega-0f9ffcb68f90126499733c77baeed6015b96cb587e8c5ff05ae7e94eca74b349"
-  },
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app:*)",
-      "Bash(npm init:*)",
-      "Bash(npm install:*)",
-      "Bash(npx tailwindcss:*)",
-      "Bash(npm run dev:*)",
-      "Bash(git init:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(taskkill:*)",
+      "Bash(cd:*)",
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(while read f)",
+      "Bash(do wc -l \"$f\")",
+      "Bash(done)",
       "Bash(npm uninstall:*)",
-      "WebSearch",
-      "WebFetch(domain:www.puzzlesandriddles.com)",
-      "WebFetch(domain:2019.makemepulse.com)",
-      "Bash(dir:*)"
+      "Bash(npm run type-check:*)",
+      "Bash(npm install:*)",
+      "Skill(example-skills:webapp-testing)",
+      "Bash(timeout /t 30 /nobreak)",
+      "Bash(nul)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout /t 20 /nobreak)",
+      "Bash(python test_app.py:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

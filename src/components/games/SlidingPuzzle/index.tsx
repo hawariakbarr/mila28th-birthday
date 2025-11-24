@@ -130,8 +130,8 @@ export default function SlidingPuzzle({ level }: SlidingPuzzleProps) {
     const row = Math.floor(tileNumber / gridSize);
     const col = tileNumber % gridSize;
 
-    const xPercent = gridSize === 1 ? 0 : (col / (gridSize - 1)) * 100;
-    const yPercent = gridSize === 1 ? 0 : (row / (gridSize - 1)) * 100;
+    const xPercent = (col / (gridSize - 1)) * 100;
+    const yPercent = (row / (gridSize - 1)) * 100;
 
     return `${xPercent}% ${yPercent}%`;
   };

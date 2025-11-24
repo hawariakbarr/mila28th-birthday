@@ -48,3 +48,15 @@ Thumbs.db
 
 # MegaLLM Configuration
 .claude/settings.local.json
+
+# Test artifacts
+test-screenshots/
+test_app.py
+*.tsbuildinfo
+
+# Resources
+locus-resources
+makepulse-resources
+
+# Temp files
+NUL
