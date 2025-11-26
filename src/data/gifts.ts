@@ -3,7 +3,7 @@ import { Gift } from '@/types';
 /**
  * Gift configuration data
  * Note: isCollected is derived from GameProgress.collectedGifts
- * Use useGameStore.isGiftCollected() to check collection status
+ * Use useGameProgress.isGiftCollected() to check collection status
  */
 export const gifts: Gift[] = [
   {

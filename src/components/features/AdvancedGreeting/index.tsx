@@ -284,7 +284,7 @@ export default function AdvancedGreeting() {
                     With all my love ❤️
                   </p>
                   <p className="text-2xl italic">
-                    - Your [Name]
+                    - Forever Yours
                   </p>
                 </div>
 

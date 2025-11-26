@@ -22,7 +22,7 @@ interface SelectedCell {
 
 export default function WordSearch({ level }: WordSearchProps) {
   const router = useRouter();
-  const { completeLevel, isLevelCompleted } = useGameProgress();
+  const { completeLevel } = useGameProgress();
   const [foundWords, setFoundWords] = useState<string[]>([]);
   const [isSelecting, setIsSelecting] = useState(false);
   const [selectedCells, setSelectedCells] = useState<SelectedCell[]>([]);

@@ -4,7 +4,6 @@ export interface WordSearchWord {
   startCol: number;
   endRow: number;
   endCol: number;
-  found: boolean;
 }
 
 export interface WordSearchData {
@@ -42,7 +41,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 1,
         endRow: 0,
         endCol: 5,
-        found: false,
       },
       {
         word: 'CAKE',
@@ -50,7 +48,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 6,
         endRow: 0,
         endCol: 9,
-        found: false,
       },
       {
         word: 'BALLOONS',
@@ -58,7 +55,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 1,
         endRow: 2,
         endCol: 8,
-        found: false,
       },
       {
         word: 'CELEBRATE',
@@ -66,7 +62,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 0,
         endRow: 4,
         endCol: 8,
-        found: false,
       },
       {
         word: 'HAPPY',
@@ -74,7 +69,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 4,
         endRow: 6,
         endCol: 8,
-        found: false,
       },
       {
         word: 'WISHES',
@@ -82,7 +76,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 2,
         endRow: 7,
         endCol: 7,
-        found: false,
       },
       {
         word: 'GIFTS',
@@ -90,7 +83,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 2,
         endRow: 8,
         endCol: 6,
-        found: false,
       },
       {
         word: 'SMILE',
@@ -98,7 +90,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 2,
         endRow: 9,
         endCol: 6,
-        found: false,
       },
       {
         word: 'FUN',
@@ -106,7 +97,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 7,
         endRow: 9,
         endCol: 9,
-        found: false,
       },
       // Vertical words
       {
@@ -115,7 +105,6 @@ export const wordSearchGames: WordSearchData[] = [
         startCol: 0,
         endRow: 3,
         endCol: 0,
-        found: false,
       },
     ],
   },
