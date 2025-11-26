@@ -60,3 +60,9 @@ makepulse-resources
 
 # Temp files
 NUL
+
+.claude/
+.factory/
+analyze_scene.py
+test_ispy_game.py
+additional-resrouces/
