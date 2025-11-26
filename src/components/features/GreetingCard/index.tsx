@@ -281,7 +281,7 @@ export default function GreetingCard() {
                             With all my love ❤️
                           </p>
                           <p className="text-xl text-gray-600 italic">
-                            - Your [Name]
+                            - Forever Yours
                           </p>
                         </motion.div>
 

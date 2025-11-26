@@ -20,7 +20,11 @@ interface Card {
   isMatched: boolean;
 }
 
-export default function MemoryMatch() {
+interface MemoryMatchProps {
+  level: number;
+}
+
+export default function MemoryMatch({ level }: MemoryMatchProps) {
   const router = useRouter();
   const { completeLevel } = useGameProgress();
   const [cards, setCards] = useState<Card[]>([]);
@@ -30,7 +34,7 @@ export default function MemoryMatch() {
   const [isComplete, setIsComplete] = useState(false);
   const [canFlip, setCanFlip] = useState(true);
 
-  const gift = gifts.find((g) => g.level === 1);
+  const gift = gifts.find((g) => g.level === level);
   const totalPairs = 8;
 
   // Initialize game
@@ -85,10 +89,10 @@ export default function MemoryMatch() {
       setTimeout(() => {
         setIsComplete(true);
         celebrationConfetti();
-        completeLevel(1);
+        completeLevel(level);
       }, 500);
     }
-  }, [matchedPairs]);
+  }, [matchedPairs, level, completeLevel]);
 
   const resetGame = () => {
     const newCards = generateCards().map((card) => ({
@@ -117,7 +121,7 @@ export default function MemoryMatch() {
   };
 
   const handleContinue = () => {
-    router.push(`/riddle/1`);
+    router.push(`/riddle/${level}`);
   };
 
   const handleBackToDashboard = () => {

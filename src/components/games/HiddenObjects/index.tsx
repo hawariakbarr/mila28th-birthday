@@ -17,7 +17,7 @@ interface HiddenObjectsProps {
 
 export default function HiddenObjects({ level }: HiddenObjectsProps) {
   const router = useRouter();
-  const { completeLevel, isLevelCompleted } = useGameProgress();
+  const { completeLevel } = useGameProgress();
   const [foundObjects, setFoundObjects] = useState<string[]>([]);
   const [wrongClicks, setWrongClicks] = useState(0);
   const [wrongClickPosition, setWrongClickPosition] = useState<{ x: number; y: number } | null>(null);

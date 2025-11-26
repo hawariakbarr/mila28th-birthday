@@ -15,7 +15,7 @@ export interface Gift {
 /**
  * Level data structure
  * Note: isUnlocked and isCompleted are derived from GameProgress
- * Use useGameStore.isLevelUnlocked() and isLevelCompleted() to get these values
+ * Use useGameProgress.isLevelUnlocked() and isLevelCompleted() to get these values
  */
 export interface Level {
   id: number;

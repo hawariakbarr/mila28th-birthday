@@ -16,7 +16,7 @@ interface SpotTheDifferenceProps {
 
 export default function SpotTheDifference({ level }: SpotTheDifferenceProps) {
   const router = useRouter();
-  const { completeLevel, isLevelCompleted } = useGameProgress();
+  const { completeLevel } = useGameProgress();
   const [foundDifferences, setFoundDifferences] = useState<string[]>([]);
   const [showHint, setShowHint] = useState(false);
   const [wrongClicks, setWrongClicks] = useState(0);
