@@ -31,7 +31,7 @@ main flow of the game:
     - parfume (level 3)
     - bouquet of flowers (additional gift)
     - prayer robe (level 2)
-    - sleeping dress (level 1)
+    - bucket of happiness (level 1)
 
     example of mini games that can be used:
     - https://www.crazygames.com/game/memory-match

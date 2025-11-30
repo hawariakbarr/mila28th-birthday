@@ -5,8 +5,8 @@
 
 // Game Configuration
 export const GAME_CONFIG = {
-  TOTAL_LEVELS: 5,
-  TOTAL_GIFTS: 5,
+  TOTAL_LEVELS: 6,
+  TOTAL_GIFTS: 6,
   FIRST_LEVEL_ID: 1,
 } as const;
 
@@ -36,6 +36,7 @@ export const ROUTES = {
   GAME: (levelId: number) => `/game/${levelId}`,
   RIDDLE: (level: number) => `/riddle/${level}`,
   GREETING: '/greeting',
+  GREETING_FLOWER: '/greeting-flower',
   GREETING_LOCUS: '/greeting-locus',
   GREETING_LOCUS_ORIGIN: '/greeting-locus-origin',
   GREETING_NOMADIC: '/greeting-nomadic',

@@ -40,10 +40,18 @@ export const levels: Level[] = [
   },
   {
     id: 5,
-    gameType: 'puzzle',
-    title: 'Puzzle Challenge',
-    description: 'Complete the birthday puzzle to find your final gift!',
-    difficulty: 'hard',
+    gameType: 'jigsaw',
+    title: 'Jigsaw Puzzle',
+    description: 'Drag and drop the pieces to complete the birthday picture!',
+    difficulty: 'medium',
     giftId: 'bag',
+  },
+  {
+    id: 6,
+    gameType: 'quiz',
+    title: 'Birthday Trivia',
+    description: 'Answer fun questions about the birthday girl!',
+    difficulty: 'medium',
+    giftId: 'jewelry',
   },
 ];

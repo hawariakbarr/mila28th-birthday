@@ -35,7 +35,7 @@ export default function GameDashboard() {
 
   const handleViewGreeting = () => {
     celebrationConfetti();
-    router.push('/greeting');
+    router.push('/greeting-flower');
   };
 
   const handleResetConfirm = () => {

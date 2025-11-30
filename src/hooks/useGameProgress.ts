@@ -5,7 +5,7 @@ const initialProgress: GameProgress = {
   currentLevel: 1,
   completedLevels: [],
   collectedGifts: [],
-  totalGifts: 5,
+  totalGifts: 6,
   isGameComplete: false,
 };
 

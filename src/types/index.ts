@@ -19,7 +19,7 @@ export interface Gift {
  */
 export interface Level {
   id: number;
-  gameType: 'memory' | 'spot-difference' | 'hidden-objects' | 'word-search' | 'puzzle';
+  gameType: 'memory' | 'spot-difference' | 'hidden-objects' | 'word-search' | 'puzzle' | 'jigsaw' | 'quiz';
   title: string;
   description: string;
   difficulty: 'easy' | 'medium' | 'hard';
@@ -36,7 +36,7 @@ export interface GameProgress {
   completedAt?: string;
 }
 
-export type GameType = 'memory' | 'spot-difference' | 'hidden-objects' | 'word-search' | 'puzzle';
+export type GameType = 'memory' | 'spot-difference' | 'hidden-objects' | 'word-search' | 'puzzle' | 'jigsaw' | 'quiz';
 
 export interface MemoryCard {
   id: number;

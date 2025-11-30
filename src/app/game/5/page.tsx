@@ -1,5 +1,5 @@
-import SlidingPuzzle from '@/components/games/SlidingPuzzle';
+import JigsawPuzzle from '@/components/games/JigsawPuzzle';
 
 export default function Game5Page() {
-  return <SlidingPuzzle level={5} />;
+  return <JigsawPuzzle level={5} />;
 }

@@ -195,7 +195,7 @@ Final Birthday Greeting Card 🎉
 
 ## The 5 Gifts
 
-1. **Sleeping Dress** (Level 1)
+1. **Bucket of Happiness** (Level 1) -> this is a bucket filled by snacks
 2. **Prayer Robe** (Level 2)
 3. **Parfume** (Level 3)
 4. **Shoes** (Level 4)
